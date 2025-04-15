@@ -1,4 +1,4 @@
-🛡️ Knight Game (Godot)
+🛡️ Knight GameV1.0 (Godot)
 Welcome to Knight Game, a simple 2D action platformer built using the Godot Engine. You play as a knight navigating through a pixelated world filled with danger, treasure, and adventure!
 
 ![Screenshot 2025-04-15 224315](https://github.com/user-attachments/assets/387b5171-a1bc-4e7c-ac77-d1221922b2c9)
