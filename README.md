@@ -1,6 +1,8 @@
 🛡️ Knight Game (Godot)
 Welcome to Knight Game, a simple 2D action platformer built using the Godot Engine. You play as a knight navigating through a pixelated world filled with danger, treasure, and adventure!
 
+![Screenshot 2025-04-15 224315](https://github.com/user-attachments/assets/387b5171-a1bc-4e7c-ac77-d1221922b2c9)
+
 🎮 Current Features
 🚶‍♂️ Player Movement
 Responsive movement controls using Godot's input system and KinematicBody2D.
@@ -44,9 +46,8 @@ Smarter enemy AI
 💻 Getting Started
 Clone or download this repository.
 
-Open the project in Godot Engine.
+Open the .exe file!
 
-Run the scene (F5) to start playing!
 
 Make sure to open the game scene:
 res://scenes/Main.tscn (or whatever your main scene is)
