@@ -121,7 +121,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7ahtn")
 }],
-"loop": true,
+"loop": false,
 "name": &"Dying",
 "speed": 5.0
 }, {
@@ -218,10 +218,16 @@ position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_lhvu3")
 animation = &"Dying"
 autoplay = "Idle"
-frame_progress = 0.804909
+frame = 3
+frame_progress = 1.0
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="PlayerBody" type="Area2D" parent="." groups=["player"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBody"]
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_f50pn")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="PlayerBody" to="." method="_on_player_body_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
