@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://6w6gbt4avpb8"]
+[gd_scene load_steps=35 format=3 uid="uid://6w6gbt4avpb8"]
 
 [ext_resource type="Texture2D" uid="uid://cxfyi3kqj811s" path="res://assets/sprites/knight.png" id="1_f50pn"]
 [ext_resource type="Script" uid="uid://dp6ub8jidam25" path="res://script/player.gd" id="1_onrkg"]
@@ -10,6 +10,10 @@ radius = 5.0
 atlas = ExtResource("1_f50pn")
 region = Rect2(0, 224, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ahtn"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(64, 192, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_pbfsw"]
 atlas = ExtResource("1_f50pn")
 region = Rect2(32, 224, 32, 32)
@@ -18,9 +22,25 @@ region = Rect2(32, 224, 32, 32)
 atlas = ExtResource("1_f50pn")
 region = Rect2(64, 224, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ahtn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtqh7"]
 atlas = ExtResource("1_f50pn")
 region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lmhl"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx0e4"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jm5j8"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(64, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hik5"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(96, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ij6vw"]
 atlas = ExtResource("1_f50pn")
@@ -113,16 +133,36 @@ animations = [{
 "texture": SubResource("AtlasTexture_pylmc")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_7ahtn")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_pbfsw")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5tmop")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7ahtn")
+"texture": SubResource("AtlasTexture_qtqh7")
 }],
 "loop": false,
 "name": &"Dying",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lmhl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx0e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jm5j8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hik5")
+}],
+"loop": true,
+"name": &"Hurt",
 "speed": 5.0
 }, {
 "frames": [{
@@ -218,7 +258,7 @@ position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_lhvu3")
 animation = &"Dying"
 autoplay = "Idle"
-frame = 3
+frame = 4
 frame_progress = 1.0
 
 [node name="PlayerBody" type="Area2D" parent="." groups=["player"]]
@@ -228,6 +268,7 @@ position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_f50pn")
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="area_entered" from="PlayerBody" to="." method="_on_player_body_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
