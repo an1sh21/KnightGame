@@ -61,7 +61,7 @@ func die():
 	print("Death timer started with wait time: ", death_timer.wait_time)
 
 func _on_death_timer_timeout():
-	print("Death timer completed")S
+	print("Death timer completed")
 	Engine.time_scale = 1.0
 	get_tree().reload_current_scene()
 
